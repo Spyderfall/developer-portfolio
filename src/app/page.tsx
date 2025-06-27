@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import SplashScreen from '@/components/SplashScreen';
 import Header from '@/components/Header';
 import TypingTitle from '@/components/TypingTitle';
+import AboutSection from '@/components/AboutSection';
+import ProjectsSection from '@/components/ProjectsSection';
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
@@ -69,20 +71,31 @@ export default function Home() {
           </section>
 
 
-          <section
+          {/* <section
             id="about"
             className="snap-start h-screen flex items-center justify-center bg-gray-50"
           >
             <h2 className="text-3xl font-bold">About Section</h2>
+          </section> */}
+          <section
+            id="about"
+            className="snap-start h-screen flex items-center justify-center bg-gray-50"
+          >
+            <AboutSection />
           </section>
 
-          <section
+          {/* <section
             id="projects"
             className="snap-start h-screen flex items-center justify-center"
           >
             <h2 className="text-3xl font-bold">Projects Section</h2>
+          </section> */}
+          <section
+            id="projects"
+            className="snap-start h-screen flex items-center justify-center bg-gray-50"
+          >
+            <ProjectsSection />
           </section>
-
           <section
             id="contact"
             className="snap-start h-screen flex items-center justify-center bg-gray-50"

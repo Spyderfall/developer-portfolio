@@ -1,0 +1,77 @@
+'use client';
+
+import {
+  FaReact,
+  FaDatabase,
+} from 'react-icons/fa';
+import {
+  SiNextdotjs,
+  SiFlutter,
+  SiSpringboot,
+  SiMysql,
+} from 'react-icons/si';
+
+const factualData = [
+  { value: '120+', label: 'Completed Projects' },
+  { value: '95%', label: 'Client Satisfaction' },
+  { value: '4', label: 'Years Industry Experience' },
+  { value: '50+', label: 'Open Source Contributions' },
+  { value: '30+', label: 'Happy Clients' },
+  { value: '10', label: 'Awards & Recognitions' },
+];
+
+const skills = [
+  { name: 'Flutter', Icon: SiFlutter },
+  { name: 'React', Icon: FaReact },
+  { name: 'Next.js', Icon: SiNextdotjs },
+  { name: 'Spring Boot', Icon: SiSpringboot },
+  { name: 'SQL', Icon: FaDatabase },
+];
+
+export default function AboutSection() {
+  return (
+    <section
+      id="about"
+      className="snap-start h-screen flex flex-col justify-center bg-gray-50 px-12 py-16"
+      style={{ scrollSnapAlign: 'start' }}
+    >
+      <div className="flex flex-col md:flex-row md:space-x-16 max-w-6xl mx-auto mt-16">
+        {/* Left side */}
+        <div className="md:w-1/2 flex flex-col justify-center">
+          <h2 className="text-3xl font-semibold mb-4">About Me</h2>
+          <p className="text-base leading-relaxed text-gray-700">
+            Hello! I'm Sagar Adulkar, a passionate web developer specializing in building performant and user-friendly applications with modern technologies like Next.js, React, and TypeScript.
+          </p>
+          <p className="mt-3 text-base leading-relaxed text-gray-700">
+            I enjoy creating clean, maintainable code using best practices such as Clean Architecture. When I'm not coding, I love exploring new tech, reading, and contributing to open-source projects.
+          </p>
+        </div>
+
+        {/* Right side */}
+        <div className="md:w-1/2 mt-12 md:mt-0 grid grid-cols-2 grid-rows-3 gap-y-6 gap-x-10 text-center">
+          {factualData.map(({ value, label }, i) => (
+            <div key={i} className="flex flex-col items-center">
+              <span className="text-3xl font-extrabold text-indigo-600">{value}</span>
+              <span className="mt-1 text-sm text-gray-600">{label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Skills grid below remains unchanged */}
+      <div className="mt-20 max-w-6xl mx-auto">
+        <div className="grid grid-cols-5 gap-8">
+          {skills.map(({ name, Icon }) => (
+            <div
+              key={name}
+              className="flex flex-col items-center space-y-2 text-gray-700"
+            >
+              <Icon className="text-indigo-600 w-12 h-12" />
+              <span className="text-sm font-medium">{name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
