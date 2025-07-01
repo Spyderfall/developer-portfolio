@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import TypingTitle from '@/components/TypingTitle';
 import AboutSection from '@/components/AboutSection';
 import ProjectsSection from '@/components/ProjectsSection';
+import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
@@ -70,8 +71,27 @@ export default function Home() {
             </section>
           ))}
 
-          <section id="contact" className="min-h-screen flex items-center justify-center bg-gray-50">
-            <h2 className="text-3xl font-bold">Contact Section</h2>
+          <section
+            id="contact"
+            className="
+    min-h-screen flex items-center justify-center 
+    px-8 
+    relative overflow-hidden
+    bg-gradient-to-br 
+    from-gray-200 via-white to-gray-300 
+    dark:from-gray-800 dark:via-gray-900 dark:to-gray-800
+  "
+          >
+            {/* White glowing dot */}
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-white rounded-full blur-3xl opacity-10 dark:opacity-20 pointer-events-none"></div>
+
+            {/* Pattern overlay */}
+            <div
+              className="absolute inset-0 bg-[url('/background-pattern.svg')] bg-repeat opacity-5 dark:opacity-10 pointer-events-none"
+              aria-hidden="true"
+            />
+
+            <ContactSection />
           </section>
         </main>
       )}
