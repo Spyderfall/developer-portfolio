@@ -5,23 +5,6 @@ import { ContactForm } from "@/domain/entities/ContactForm";
 import { StaticContactRepository } from "@/infrastructure/data/StaticContactRepository";
 import { SendContactMessageUseCase } from "@/use-cases/SendContactMessageUseCase";
 
-const PawIcon = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth={2}
-    stroke="currentColor"
-    className="w-6 h-6 text-indigo-500"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M3 15a4 4 0 014-4h.5a2 2 0 100-4 4 4 0 018 0 2 2 0 100 4H17a4 4 0 014 4v1a3 3 0 11-6 0v-1"
-    />
-  </svg>
-);
-
 export default function ContactSection() {
   const [form, setForm] = useState<ContactForm>({
     name: "",
@@ -40,20 +23,23 @@ export default function ContactSection() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
+  e.preventDefault();
+  setStatus("sending");
 
-    const repo = new StaticContactRepository();
-    const useCase = new SendContactMessageUseCase(repo);
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+    if (!res.ok) throw new Error('Failed');
+    setStatus("sent");
+    setForm({ name: "", email: "", message: "" });
+  } catch {
+    setStatus("error");
+  }
+};
 
-    try {
-      await useCase.execute(form);
-      setStatus("sent");
-      setForm({ name: "", email: "", message: "" });
-    } catch (e) {
-      setStatus("error");
-    }
-  };
 
   return (
     <div className="w-full pt-6">
@@ -69,33 +55,103 @@ export default function ContactSection() {
               className="relative z-10 object-cover w-full h-full rounded-xl shadow-lg"
             />
           </div>
+
+          {/* Bottom message for small screens */}
+          <div className="flex md:hidden justify-center items-center gap-4 mt-8 px-4">
+            {/* Zig-zag arrow pointing right */}
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="rotate-180"
+            >
+              <path
+                d="M5 10 L10 15 L15 10 L20 15 L25 10 L30 15 L35 10"
+                stroke="#6366f1"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              {/* Arrowhead */}
+              <polyline
+                points="35,10 40,15 35,20"
+                stroke="#6366f1"
+                strokeWidth="3"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+
+            {/* Shortened message */}
+            <div className="text-indigo-500 text-center font-semibold text-lg select-none">
+              My furry friend awaits your message!
+            </div>
+          </div>
         </div>
 
-        {/* Center: Curve + Phrase */}
-        <div className="hidden md:flex flex-col items-center justify-center w-24 h-full">
-          {/* Curved line */}
+        {/* Center: Zig-zag curved arrow + shortened message */}
+        <div className="hidden md:flex flex-col items-center justify-center w-40 h-full pr-16">
+          {/* Zig-zag curved arrow pointing left */}
           <svg
             className="mb-4"
-            width="80"
+            width="40"
             height="40"
-            viewBox="0 0 80 40"
+            viewBox="0 0 40 40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M0 40 C20 0, 60 0, 80 40"
+              d="M35 30 L30 25 L25 30 L20 25 L15 30 L10 25 L5 30"
+              stroke="#6366f1"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            {/* Arrowhead */}
+            <polyline
+              points="5,30 0,25 5,20"
               stroke="#6366f1"
               strokeWidth="3"
               fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
 
-          {/* Phrase with paws */}
-          <div className="flex pr-16 items-center gap-4 text-indigo-500 text-center font-semibold text-lg select-none">
-            
-            <span>Looking forward to working with you 🐾</span>
-            
+          {/* Shortened message */}
+          <div className="text-indigo-500 text-center font-semibold text-lg select-none">
+            My friend here awaits for your message!
           </div>
+
+          {/* Zig-zag curved arrow pointing left */}
+          <svg
+            className="mb-4"
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M35 30 L30 25 L25 30 L20 25 L15 30 L10 25 L5 30"
+              stroke="#6366f1"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            {/* Arrowhead */}
+            <polyline
+              points="5,30 0,25 5,20"
+              stroke="#6366f1"
+              strokeWidth="3"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
         </div>
 
         {/* Right side: Contact Form Card */}

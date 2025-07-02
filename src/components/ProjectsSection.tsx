@@ -85,13 +85,13 @@ export default function ProjectsSection({ projectIndex }: ProjectsSectionProps) 
             {project.description}
           </p>
 
-          <button
+          {/* <button
             type="button"
             onClick={() => alert(`Viewing ${project.title}`)}
             className="mt-6 inline-block px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm rounded-lg shadow-md transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-300"
           >
             View Project
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
