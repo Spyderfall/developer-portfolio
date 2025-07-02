@@ -44,11 +44,11 @@ export default function ProjectsSection({ projectIndex }: ProjectsSectionProps) 
   const imageRight = projectIndex % 2 === 0;
 
   return (
-    <div className="w-full h-full bg-gray-50 py-8 px-4 sm:px-8 md:px-16"> {/* Reduced vertical padding here */}
+    <div className="w-full h-full bg-gray-50 pt-24 pb-8 px-4 sm:px-8 md:px-16">
       {/* Section Header (only for the first project) */}
       <div className="max-w-6xl mx-auto mb-8 flex justify-end min-h-[2.5rem]">
         {projectIndex === 0 && (
-          <h2 className="text-2xl font-bold text-gray-900 tracking-tight">Projects</h2>
+          <h2 className="text-4xl font-bold text-indigo-300">Projects</h2>
         )}
       </div>
 
