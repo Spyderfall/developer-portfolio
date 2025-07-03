@@ -17,7 +17,7 @@ export async function POST(req: Request) {
         refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
       },
     });
-s
+
     await transporter.sendMail({
       from: `"${name}" <${email}>`,
       to: process.env.MY_EMAIL_ADDRESS,
