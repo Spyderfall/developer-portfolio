@@ -61,7 +61,7 @@ export default function AboutSection() {
         <div className="md:w-1/2 mt-12 md:mt-0 grid grid-cols-2 grid-rows-3 gap-y-6 gap-x-10 text-center">
           {factualData.map(({ value, label }, i) => (
             <div key={i} className="flex flex-col items-center">
-              <span className="text-3xl font-extrabold text-indigo-600">{value}</span>
+              <span className="text-3xl font-extrabold text-indigo-500">{value}</span>
               <span className="mt-1 text-sm text-gray-600">{label}</span>
             </div>
           ))}
@@ -76,7 +76,7 @@ export default function AboutSection() {
               key={name}
               className="flex flex-col items-center space-y-2 text-gray-700"
             >
-              <Icon className="text-indigo-600 w-12 h-12" />
+              <Icon className="text-indigo-500 w-12 h-12" />
               <span className="text-sm font-medium">{name}</span>
             </div>
           ))}
