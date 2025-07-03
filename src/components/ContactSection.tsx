@@ -122,7 +122,7 @@ export default function ContactSection() {
           </svg>
 
           {/* Shortened message */}
-          <div className="text-indigo-500 text-center font-semibold text-lg select-none">
+          <div className="text-indigo-300 text-center font-semibold text-lg select-none">
             My friend here awaits for your message!
           </div>
 
@@ -157,7 +157,7 @@ export default function ContactSection() {
         {/* Right side: Contact Form Card */}
         <div className="w-full md:w-[46%] mt-12 bg-gradient-to-br from-gray-200 via-gray-100 to-gray-300 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 rounded-2xl p-8 shadow-xl border border-gray-300 dark:border-gray-700">
           <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-6">
-            Get in Touch Today
+            Get in Touch
           </h3>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">

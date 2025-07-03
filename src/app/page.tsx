@@ -7,6 +7,7 @@ import TypingTitle from '@/components/TypingTitle';
 import AboutSection from '@/components/AboutSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import ContactSection from "@/components/ContactSection";
+import Footer from '@/components/Footer';
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
@@ -37,7 +38,7 @@ export default function Home() {
     <>
       {showSplash && <SplashScreen />}
       {showHeader && <Header onClick={handleLogoClick} />}
-      {!showSplash && (
+      {!showSplash && (        
         <main className="h-screen overflow-y-scroll scroll-smooth">
           <section id="home" className="min-h-screen flex items-center justify-center px-8">
             <div className="flex items-center gap-x-20">
@@ -93,7 +94,8 @@ export default function Home() {
 
             <ContactSection />
           </section>
-        </main>
+          <Footer /> 
+        </main>                
       )}
     </>
   );

@@ -48,7 +48,7 @@ export default function ProjectsSection({ projectIndex }: ProjectsSectionProps) 
       {/* Section Header (only for the first project) */}
       <div className="max-w-6xl mx-auto mb-8 flex justify-end min-h-[2.5rem]">
         {projectIndex === 0 && (
-          <h2 className="text-4xl font-bold text-indigo-300">Projects</h2>
+          <h2 className="text-4xl font-bold text-indigo-500">Projects</h2>
         )}
       </div>
 
