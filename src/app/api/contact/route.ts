@@ -17,12 +17,12 @@ export async function POST(req: Request) {
         refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
       },
     });
-
+s
     await transporter.sendMail({
       from: `"${name}" <${email}>`,
       to: process.env.MY_EMAIL_ADDRESS,
-      subject: `New Message from ${name}`,
-      text: message,
+      subject: `Portfolio ${name}:${email}`,
+      text: `New Message from \n${name} : ${email} \n ${message}`,
     });
 
     return NextResponse.json({ message: "Email sent successfully." });
