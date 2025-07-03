@@ -45,8 +45,8 @@ export default function Home() {
               <div className="text-left transform -translate-x-4">
                 <p className="text-lg">Hello, I'm</p>
                 <TypingTitle fullText="Sagar Adulkar" />
-                <p className="text-lg">An enthusiastic full stack developer</p>
-                <p className="text-sm mt-2 text-gray-500">Based in Earth 🌍</p>
+                <p className="text-lg">Enthusiastic Full Stack Developer</p>
+                <p className="text-sm mt-2 text-gray-500">Engineering Solutions that Connects Worlds.🌍</p>
               </div>
               <div className="transform translate-x-4">
                 <img
@@ -87,10 +87,10 @@ export default function Home() {
             <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-white rounded-full blur-3xl opacity-10 dark:opacity-20 pointer-events-none"></div>
 
             {/* Pattern overlay */}
-            <div
+            {/* <div
               className="absolute inset-0 bg-[url('/background-pattern.svg')] bg-repeat opacity-5 dark:opacity-10 pointer-events-none"
               aria-hidden="true"
-            />
+            /> */}
 
             <ContactSection />
           </section>

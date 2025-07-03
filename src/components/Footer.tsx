@@ -34,14 +34,6 @@ export default function Footer() {
           <h3 className="font-semibold text-gray-300 mb-2">Connect With Me</h3>
           <div className="flex justify-center sm:justify-start space-x-4 text-gray-400">
             <a
-              href="https://github.com/Spyderfall"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white"
-            >
-              GitHub
-            </a>
-            <a
               href="https://linkedin.com/in/sagar-adulkar"
               target="_blank"
               rel="noopener noreferrer"
@@ -49,6 +41,14 @@ export default function Footer() {
             >
               LinkedIn
             </a>
+            <a
+              href="https://github.com/Spyderfall"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white"
+            >
+              GitHub
+            </a>            
             <a
               href="https://x.com/spyderfall"
               target="_blank"
