@@ -9,16 +9,16 @@ interface ProjectsSectionProps {
 const projects = [
   {
     id: 1,
-    title: 'Project One',
+    title: 'Supplier Registration Portal (SRP)',
     description:
-      'A sleek UI toolkit built with React and Tailwind—focused on accessibility and performance.',
+      'Developed a centralized platform for vendors to seamlessly onboard their business and products into the Retail ecosystem. Standardization of vendor onboarding across multiple formats and categories, dynamic terms of trade according to various business, automates the approval process, and ensures relaible complaince -- enabling thousands of suppliers to connect and trade.',
     image: '/projects/project1.jpg',
   },
   {
     id: 2,
-    title: 'Project Two',
+    title: 'A Place Of Business',
     description:
-      'An AI-powered content generator that simplifies writing workflows and boosts creativity.',
+      'Built a robust, streamlined platform for generating GSTINs, enabling businesses to legally operate in specific locations. The centralized system has supported the setup of 5000+ new places of business nationwide. With multi-role support and clear approval flow, it replaces manual paperwork and emails with a transparent, automated process -- reducing delays and ensuring full complaince.',
     image: '/projects/project2.jpg',
   },
   {
