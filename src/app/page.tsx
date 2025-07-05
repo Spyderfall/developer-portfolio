@@ -5,9 +5,11 @@ import SplashScreen from '@/components/SplashScreen';
 import Header from '@/components/Header';
 import TypingTitle from '@/components/TypingTitle';
 import AboutSection from '@/components/AboutSection';
+import ExperienceSection from '@/components/ExperienceSection';
 import ProjectsSection from '@/components/ProjectsSection';
-import ContactSection from "@/components/ContactSection";
+import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import SocialSidebar from '@/components/SocialSidebar';
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
@@ -37,16 +39,24 @@ export default function Home() {
   return (
     <>
       {showSplash && <SplashScreen />}
-      {showHeader && <Header onClick={handleLogoClick} />}
-      {!showSplash && (        
+      {showHeader && (
+        <>
+          <Header onClick={handleLogoClick} />
+          <SocialSidebar />
+        </>
+      )}
+      {!showSplash && (
         <main className="h-screen overflow-y-scroll scroll-smooth">
+          {/* Home */}
           <section id="home" className="min-h-screen flex items-center justify-center px-8">
             <div className="flex items-center gap-x-20">
               <div className="text-left transform -translate-x-4">
                 <p className="text-lg">Hello, I'm</p>
                 <TypingTitle fullText="Sagar Adulkar" />
                 <p className="text-lg">Enthusiastic Full Stack Developer</p>
-                <p className="text-sm mt-2 text-gray-500">Engineering Solutions that Connects Worlds.🌍</p>
+                <p className="text-sm mt-2 text-gray-500">
+                  Engineering Solutions that Connect Worlds.🌍
+                </p>
               </div>
               <div className="transform translate-x-4">
                 <img
@@ -58,11 +68,21 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="about" className="min-h-screen flex items-center justify-center bg-gray-50">
+          {/* About */}
+          <section
+            id="about"
+            className="min-h-screen flex items-center justify-center bg-gray-50 px-8"
+          >
             <AboutSection />
           </section>
 
-          {[0, 1, 2, 3].map((idx) => (
+          {/* Experience */}
+          <section id="experience" className="min-h-screen px-8 py-24 bg-[#0f0f0f]">
+            <ExperienceSection />
+          </section>
+
+          {/* Projects (uncomment when ready) */}
+          {/* {[0, 1, 2, 3].map((idx) => (
             <section
               key={idx}
               id={`project-${idx + 1}`}
@@ -70,32 +90,28 @@ export default function Home() {
             >
               <ProjectsSection projectIndex={idx} />
             </section>
-          ))}
+          ))} */}
 
+          {/* Contact */}
           <section
             id="contact"
             className="
-    min-h-screen flex items-center justify-center 
-    px-8 
-    relative overflow-hidden
-    bg-gradient-to-br 
-    from-gray-200 via-white to-gray-300 
-    dark:from-gray-800 dark:via-gray-900 dark:to-gray-800
-  "
+              min-h-screen flex items-center justify-center 
+              px-8 
+              relative overflow-hidden
+              bg-gradient-to-br 
+              from-gray-200 via-white to-gray-300 
+              dark:from-gray-800 dark:via-gray-900 dark:to-gray-800
+            "
           >
             {/* White glowing dot */}
             <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-white rounded-full blur-3xl opacity-10 dark:opacity-20 pointer-events-none"></div>
 
-            {/* Pattern overlay */}
-            {/* <div
-              className="absolute inset-0 bg-[url('/background-pattern.svg')] bg-repeat opacity-5 dark:opacity-10 pointer-events-none"
-              aria-hidden="true"
-            /> */}
-
             <ContactSection />
           </section>
-          <Footer /> 
-        </main>                
+
+          <Footer />
+        </main>
       )}
     </>
   );

@@ -20,7 +20,7 @@ const factualData = [
   { value: '12+', label: 'Completed Projects' },
   { value: '100k+', label: 'Downloads' },
   { value: '4+', label: 'Years Industry Experience' },
-  { value: '30%', label: 'Traffic Growth' },
+  { value: '5k+', label: 'Business Requests' },
   { value: '2', label: 'Awards & Recognitions' },
   { value: '40+', label: 'Features Deployed' },
 ];
