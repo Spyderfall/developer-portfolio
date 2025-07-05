@@ -10,6 +10,7 @@ import ProjectsSection from '@/components/ProjectsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import SocialSidebar from '@/components/SocialSidebar';
+import HeroBackground from '@/components/HeroBackground';
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
@@ -48,30 +49,71 @@ export default function Home() {
       {!showSplash && (
         <main className="h-screen overflow-y-scroll scroll-smooth">
           {/* Home */}
-          <section id="home" className="min-h-screen flex items-center justify-center px-8">
-            <div className="flex items-center gap-x-20">
-              <div className="text-left transform -translate-x-4">
-                <p className="text-lg">Hello, I'm</p>
-                <TypingTitle fullText="Sagar Adulkar" />
-                <p className="text-lg">Enthusiastic Full Stack Developer</p>
-                <p className="text-sm mt-2 text-gray-500">
-                  Engineering Solutions that Connect Worlds.🌍
+          <section
+            id="home"
+            className="
+    relative overflow-hidden
+    min-h-screen flex items-center justify-center px-8
+    bg-[#F5F7FA] dark:bg-[#0f0f0f]
+  "
+          >
+            <HeroBackground />
+
+            <div className="flex flex-col md:flex-row items-center gap-x-20 relative z-10">
+              <div className="text-left transform -translate-x-4 max-w-xl">
+                <p className="text-lg text-gray-800 dark:text-gray-300 mb-2 tracking-wide">
+                  Hello, I’m
                 </p>
+
+                <TypingTitle
+                  className="text-6xl sm:text-7xl leading-tight text-gray-900 dark:text-white"
+                  fullText="Sagar Adulkar"
+                />
+
+                <p className="text-xl text-gray-700 dark:text-gray-300 mb-6 font-medium tracking-wide">
+                  Full Stack Developer crafting reliable, connected solutions.
+                </p>
+
+                <p className="text-base text-gray-600 dark:text-gray-400 mb-8 max-w-md">
+                  Engineering software that bridges ideas, people, and technology.
+                </p>
+
+                <div className="mt-6">
+                  <a
+                    href="#contact"
+                    className="
+            inline-block px-6 py-3 border border-indigo-600 rounded-full
+            text-indigo-600 dark:text-indigo-400 font-medium
+            hover:bg-indigo-600 hover:text-white
+            dark:hover:bg-indigo-500 dark:hover:text-white
+            transition-colors duration-300
+          "
+                  >
+                    Let’s Connect
+                  </a>
+                </div>
               </div>
-              <div className="transform translate-x-4">
+
+              <div className="transform translate-x-4 relative group">
                 <img
                   src="/profile.jpg"
                   alt="Sagar Adulkar"
-                  className="w-48 h-48 object-cover rounded-full shadow-lg"
+                  className="
+          w-52 h-52 object-cover rounded-full shadow-2xl
+          transform transition duration-500 group-hover:scale-105
+        "
                 />
               </div>
             </div>
           </section>
 
+
+
           {/* About */}
           <section
             id="about"
-            className="min-h-screen flex items-center justify-center bg-gray-50 px-8"
+            className="min-h-screen flex items-center justify-center px-8
+                       bg-[#F9FAFB] dark:bg-[#121212]"
           >
             <AboutSection />
           </section>
@@ -86,7 +128,8 @@ export default function Home() {
             <section
               key={idx}
               id={`project-${idx + 1}`}
-              className="flex items-center justify-center bg-gray-50 py-6"
+              className="flex items-center justify-center py-6
+                         bg-[#F4F4F5] dark:bg-[#181818]"
             >
               <ProjectsSection projectIndex={idx} />
             </section>
@@ -100,11 +143,10 @@ export default function Home() {
               px-8 
               relative overflow-hidden
               bg-gradient-to-br 
-              from-gray-200 via-white to-gray-300 
-              dark:from-gray-800 dark:via-gray-900 dark:to-gray-800
+              from-gray-100 via-white to-gray-200 
+              dark:from-[#101010] dark:via-[#0d0d0d] dark:to-[#0f0f0f]
             "
           >
-            {/* White glowing dot */}
             <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-white rounded-full blur-3xl opacity-10 dark:opacity-20 pointer-events-none"></div>
 
             <ContactSection />

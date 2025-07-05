@@ -32,7 +32,7 @@ export default function TypingTitle({
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay, duration: 0.6 }}
-      className={`text-5xl font-bold mb-4 text-gray-900 ${className}`}
+      className={`text-5xl font-bold mb-4 text-gray-900 dark:text-gray-200 ${className}`}
     >
       {displayedText}
       <span className="animate-pulse">|</span>
