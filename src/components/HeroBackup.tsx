@@ -33,37 +33,38 @@ export default function HeroBackground() {
 
       const isDark = document.documentElement.classList.contains('dark');
 
-      // Increase responsiveness for more "sticky" blob feel
-      const smoothingFactor = 0.2; // Higher = follows faster
-
       if (isDark) {
-        const glowColor = '#6366F1';
+        // ✅ Dark theme: test same subtle smooth glow like light theme
+        const glowColor = '#6366F1'; // Indigo shade for dark
 
-        glowX += (targetX - glowX) * smoothingFactor;
-        glowY += (targetY - glowY) * smoothingFactor;
+        // Smooth follow: same as light theme
+        glowX += (targetX - glowX) * 0.05;
+        glowY += (targetY - glowY) * 0.05;
 
-        const x = glowX * canvas.width;
-        const y = glowY * canvas.height;
+        const x = glowX * canvas.width * 0.5;
+        const y = glowY * canvas.height * 0.5;
 
-        const r = Math.max(canvas.width, canvas.height) * 0.3;
+        const r = Math.max(canvas.width, canvas.height) * 0.7;
 
         const gradient = ctx.createRadialGradient(x, y, 0, x, y, r);
-        gradient.addColorStop(0, `${glowColor}88`); // Slightly stronger opacity
-        gradient.addColorStop(0.4, `${glowColor}44`);
+        gradient.addColorStop(0, `${glowColor}66`);
+        gradient.addColorStop(0.4, `${glowColor}33`);
         gradient.addColorStop(1, 'transparent');
 
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
+
       } else {
+        // ✅ Light theme: same subtle smooth glow tracking the cursor
         const glowColor = '#93C5FD';
 
-        glowX += (targetX - glowX) * smoothingFactor;
-        glowY += (targetY - glowY) * smoothingFactor;
+        glowX += (targetX - glowX) * 0.05;
+        glowY += (targetY - glowY) * 0.05;
 
-        const x = glowX * canvas.width;
-        const y = glowY * canvas.height;
+        const x = glowX * canvas.width * 0.5;
+        const y = glowY * canvas.height * 0.5;
 
-        const r = Math.max(canvas.width, canvas.height) * 0.3;
+        const r = Math.max(canvas.width, canvas.height) * 0.7;
 
         const gradient = ctx.createRadialGradient(x, y, 0, x, y, r);
         gradient.addColorStop(0, `${glowColor}66`);
@@ -89,5 +90,5 @@ export default function HeroBackground() {
     <>
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
     </>
-  );  
+  );
 }

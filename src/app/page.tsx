@@ -80,18 +80,21 @@ export default function Home() {
                 </p>
 
                 <div className="mt-6">
-                  <a
-                    href="#contact"
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById('contact');
+                      el?.scrollIntoView({ behavior: 'smooth' });
+                    }}
                     className="
-            inline-block px-6 py-3 border border-indigo-600 rounded-full
-            text-indigo-600 dark:text-indigo-400 font-medium
-            hover:bg-indigo-600 hover:text-white
-            dark:hover:bg-indigo-500 dark:hover:text-white
-            transition-colors duration-300
-          "
+    inline-block px-6 py-3 border border-indigo-600 rounded-full
+    text-indigo-600 dark:text-indigo-400 font-medium
+    hover:bg-indigo-600 hover:text-white
+    dark:hover:bg-indigo-500 dark:hover:text-white
+    transition-colors duration-300
+  "
                   >
                     Let’s Connect
-                  </a>
+                  </button>
                 </div>
               </div>
 

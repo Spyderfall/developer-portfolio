@@ -128,7 +128,7 @@ export default function Header({ onClick }: HeaderProps) {
       <div
         className="
           flex items-center justify-between
-          bg-white bg-opacity-60 dark:bg-gray-200 dark:bg-opacity-60
+          bg-white bg-opacity-60 dark:bg-gray-200 dark:bg-opacity-80
           backdrop-blur-md
           rounded-full
           shadow-lg
@@ -137,7 +137,7 @@ export default function Header({ onClick }: HeaderProps) {
           py-2
           border border-gray-200 dark:border-gray-700
           transition-colors duration-300
-          hover:bg-opacity-80 dark:hover:bg-opacity-80
+          hover:bg-opacity-80 dark:hover:bg-opacity-95
           cursor-default
         "
       >
