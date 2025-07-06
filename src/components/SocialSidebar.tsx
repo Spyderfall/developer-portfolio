@@ -36,15 +36,28 @@ export default function SocialSidebar() {
     return () => observers.forEach((obs) => obs.disconnect());
   }, []);
 
-  // Color map
-  const sectionColors: Record<string, string> = {
+  // Color map for sections in light mode
+  const lightColors: Record<string, string> = {
     home: 'text-indigo-500',
-    about: 'text-green-500',
-    experience: 'text-yellow-500',
-    contact: 'text-pink-500',
+    about: 'text-sky-500',
+    experience: 'text-purple-500',
+    contact: 'text-rose-500',
   };
 
-  // Shared icon class with color & transition
+  const darkColors: Record<string, string> = {
+    home: 'text-indigo-400',
+    about: 'text-sky-400',
+    experience: 'text-purple-400',
+    contact: 'text-rose-400',
+  };
+
+  // Use dark mode check
+  const isDark = typeof window !== 'undefined'
+    ? document.documentElement.classList.contains('dark')
+    : false;
+
+  const sectionColors = isDark ? darkColors : lightColors;
+
   const iconClass = `
     ${sectionColors[activeSection]}
     opacity-80
@@ -57,7 +70,7 @@ export default function SocialSidebar() {
 
   return (
     <div className="fixed bottom-8 left-10 pl-2 flex flex-col items-center space-y-4 z-50">
-      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/Spyderfall" target="_blank" rel="noopener noreferrer">
         <FaGithub size={22} className={iconClass} />
       </a>
       <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">
@@ -69,11 +82,11 @@ export default function SocialSidebar() {
       <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
         <FaTwitter size={22} className={iconClass} />
       </a>
-      <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+      <a href="https://linkedin.com/in/sagar-adulkar" target="_blank" rel="noopener noreferrer">
         <FaLinkedin size={22} className={iconClass} />
       </a>
 
-      <div className="w-px h-24 bg-gray-600 opacity-50 mt-4"></div>
+      <div className="w-px h-24 bg-gray-500 dark:bg-gray-600 opacity-50 mt-4"></div>
     </div>
   );
 }

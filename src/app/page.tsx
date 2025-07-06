@@ -11,6 +11,7 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import SocialSidebar from '@/components/SocialSidebar';
 import HeroBackground from '@/components/HeroBackground';
+import HackerTextCycler from '@/components/HackerTextCycler';
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
@@ -69,9 +70,9 @@ export default function Home() {
                   className="text-6xl sm:text-7xl leading-tight text-gray-900 dark:text-white"
                   fullText="Sagar Adulkar"
                 />
-
+                {/* <HackerTextCycler /> */}
                 <p className="text-xl text-gray-700 dark:text-gray-300 mb-6 font-medium tracking-wide">
-                  Full Stack Developer crafting reliable, connected solutions.
+                  Enthusiastic Full Stack Developer.
                 </p>
 
                 <p className="text-base text-gray-600 dark:text-gray-400 mb-8 max-w-md">
@@ -119,7 +120,7 @@ export default function Home() {
           </section>
 
           {/* Experience */}
-          <section id="experience" className="min-h-screen px-8 py-24 bg-[#0f0f0f]">
+          <section id="experience" className="min-h-screen px-8 py-24 bg-[#F9FAFB] dark:bg-[#121212]">
             <ExperienceSection />
           </section>
 
@@ -139,15 +140,14 @@ export default function Home() {
           <section
             id="contact"
             className="
-              min-h-screen flex items-center justify-center 
-              px-8 
-              relative overflow-hidden
-              bg-gradient-to-br 
-              from-gray-100 via-white to-gray-200 
-              dark:from-[#101010] dark:via-[#0d0d0d] dark:to-[#0f0f0f]
-            "
+    min-h-screen flex items-center justify-center 
+    px-8 
+    relative overflow-hidden
+    bg-gray-100 dark:bg-[#101010]
+  "
           >
-            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-white rounded-full blur-3xl opacity-10 dark:opacity-20 pointer-events-none"></div>
+            {/* 👇 Blur BLOB REMOVED for test */}
+            {/* <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-white rounded-full blur-3xl opacity-10 dark:opacity-20 pointer-events-none"></div> */}
 
             <ContactSection />
           </section>
