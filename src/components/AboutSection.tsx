@@ -27,17 +27,18 @@ const factualData = [
 ];
 
 const skills = [
-  { name: 'Flutter', Icon: SiFlutter },
-  { name: 'React', Icon: FaReact },
-  { name: 'Next.js', Icon: SiNextdotjs },
-  { name: 'TypeScript', Icon: SiTypescript },
-  { name: 'Spring Boot', Icon: SiSpringboot },
-  { name: 'Java', Icon: FaJava },
-  { name: 'SQL', Icon: FaDatabase },
-  { name: 'Git', Icon: SiGit },
-  { name: 'Docker', Icon: SiDocker },
-  { name: 'K8s', Icon: SiKubernetes },
+  { name: 'Flutter', Icon: SiFlutter, color: '#02569B' },
+  { name: 'React', Icon: FaReact, color: '#61DAFB' },
+  { name: 'Next.js', Icon: SiNextdotjs, color: '#000000' },
+  { name: 'TypeScript', Icon: SiTypescript, color: '#3178C6' },
+  { name: 'Spring Boot', Icon: SiSpringboot, color: '#6DB33F' },
+  { name: 'Java', Icon: FaJava, color: '#007396' },
+  { name: 'SQL', Icon: FaDatabase, color: '#003B57' },
+  { name: 'Git', Icon: SiGit, color: '#F05032' },
+  { name: 'Docker', Icon: SiDocker, color: '#2496ED' },
+  { name: 'K8s', Icon: SiKubernetes, color: '#326CE5' },
 ];
+
 
 export default function AboutSection() {
   return (
@@ -80,13 +81,13 @@ export default function AboutSection() {
       {/* Skills grid */}
       <div className="mt-20">
         <div className="grid grid-cols-5 sm:grid-cols-10 gap-8">
-          {skills.map(({ name, Icon }) => (
+          {skills.map(({ name, Icon, color }) => (
             <div
               key={name}
-              className="flex flex-col items-center space-y-2 text-gray-700 dark:text-gray-300 transition-colors duration-500"
+              className="flex flex-col items-center space-y-2 transition-colors duration-500"
             >
-              <Icon className="text-indigo-500 w-12 h-12" />
-              <span className="text-sm font-medium">{name}</span>
+              <Icon className="w-12 h-12" style={{ color }} />
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{name}</span>
             </div>
           ))}
         </div>
@@ -94,3 +95,11 @@ export default function AboutSection() {
     </motion.div>
   );
 }
+
+{/* <div
+key={name}
+className="flex flex-col items-center space-y-2 text-gray-700 dark:text-gray-300 transition-colors duration-500"
+>
+<Icon className="text-indigo-500 w-12 h-12" />
+<span className="text-sm font-medium">{name}</span>
+</div> */}

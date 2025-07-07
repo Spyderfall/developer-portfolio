@@ -2,7 +2,10 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6'; // X is only in `fa6`
+
 
 export default function ContactSection() {
   const [form, setForm] = useState({
@@ -38,50 +41,79 @@ export default function ContactSection() {
 
   return (
     <motion.section
-      className="w-full px-6 py-24 flex flex-col md:flex-row items-start justify-center md:gap-x-12 gap-y-16 text-gray-800 dark:text-gray-200"
+      className="w-full pl-10 pr-6 md:pl-20 md:pr-16 py-24 flex flex-col md:flex-row items-start justify-center md:gap-x-10 gap-y-16 text-gray-800 dark:text-gray-200"
+
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
       viewport={{ once: true, amount: 0.2 }}
     >
+
+      {/* LEFT SIDE */}
       {/* LEFT SIDE */}
       <motion.div
         initial={{ y: 30, opacity: 0.95 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
         viewport={{ once: true, amount: 0.2 }}
-        className="flex flex-col basis-1/2 max-w-lg gap-8"
+        className="flex flex-col basis-1/2 max-w-lg gap-10"
       >
-        <h2 className="text-4xl font-bold text-indigo-500">Contact Me</h2>
+        {/* Title + Line */}
+        <motion.div
+          className="flex items-center gap-4 mb-10"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true }}
+        >
+          <div className="flex-1 h-[2px] bg-indigo-500"></div>
+          <h2 className="text-4xl font-bold text-indigo-500 whitespace-nowrap">Let's Connect</h2>
+          <div className="flex-1 h-[2px] bg-indigo-500"></div>
+        </motion.div>
 
-        <div className="relative w-80 h-[320px] rounded-xl overflow-hidden">
-          <div className="absolute -top-6 -left-6 w-full h-full border-4 border-indigo-400 rotate-2 z-0 rounded-xl"></div>
-          <Image
-            src="/contact/cat3.jpg"
-            alt="Cute Cat"
-            width={320}
-            height={400}
-            className="relative z-10 object-cover w-full h-full rounded-xl shadow-lg"
-            priority
-          />
-        </div>
-
-        {/* Bottom Message for Mobile */}
-        <div className="md:hidden flex justify-center items-center gap-4 mt-8 px-4">
-          <svg
-            className="w-12 h-12 text-indigo-400"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
+        {/* Vertical Contact Info Stack */}
+        <div className="flex flex-col gap-6 text-lg text-gray-800 dark:text-gray-200">
+          <a
+            href="mailto:sagaradulkarwork@gmail.com"
+            className="flex items-center gap-4 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-          <div className="text-indigo-500 text-center font-semibold text-lg select-none">
-            My furry friend awaits your message!
-          </div>
+            <FaEnvelope className="text-indigo-500 text-xl" />
+            <span>sagaradulkarwork@gmail.com</span>
+          </a>
+
+          <a
+            href="https://linkedin.com/in/sagar-adulkar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+          >
+            <FaLinkedin className="text-indigo-500 text-xl" />
+            <span>LinkedIn</span>
+          </a>
+
+          <a
+            href="https://github.com/Spyderfall"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+          >
+            <FaGithub className="text-indigo-500 text-xl" />
+            <span>GitHub</span>
+          </a>
+
+          <a
+            href="https://x.com/spyderfall"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+          >
+            <FaXTwitter className="text-indigo-500 text-xl" />
+            <span>X</span>
+          </a>
         </div>
+
       </motion.div>
+
 
       {/* RIGHT FORM CARD */}
       <motion.div

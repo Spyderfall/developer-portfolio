@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = await req.json();
+    const { name, email, subject ,message } = await req.json();
 
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
@@ -19,10 +19,10 @@ export async function POST(req: Request) {
     });
 
     await transporter.sendMail({
-      from: `"${name}" <${email}>`,
+      from: `"${name} : ${email}" <${email}>`,
       to: process.env.MY_EMAIL_ADDRESS,
-      subject: `Portfolio ${name}:${email}`,
-      text: `New Message from \n${name} : ${email} \n ${message}`,
+      subject: `Portfolio ${subject}`,
+      text: `${message}`,
     });
 
     return NextResponse.json({ message: "Email sent successfully." });

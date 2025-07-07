@@ -5,9 +5,9 @@ import {
   FaGithub,
   FaYoutube,
   FaInstagram,
-  FaTwitter,
   FaLinkedin,
 } from 'react-icons/fa';
+import { FaEnvelope, FaXTwitter } from 'react-icons/fa6';
 
 export default function SocialSidebar() {
   const [activeSection, setActiveSection] = useState('home');
@@ -70,22 +70,15 @@ export default function SocialSidebar() {
 
   return (
     <div className="fixed bottom-8 left-10 pl-2 flex flex-col items-center space-y-4 z-50">
-      <a href="https://github.com/Spyderfall" target="_blank" rel="noopener noreferrer">
-        <FaGithub size={22} className={iconClass} />
-      </a>
-      <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">
-        <FaYoutube size={22} className={iconClass} />
-      </a>
-      <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">
-        <FaInstagram size={22} className={iconClass} />
-      </a>
-      <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-        <FaTwitter size={22} className={iconClass} />
-      </a>
       <a href="https://linkedin.com/in/sagar-adulkar" target="_blank" rel="noopener noreferrer">
         <FaLinkedin size={22} className={iconClass} />
       </a>
-
+      <a href="https://github.com/Spyderfall" target="_blank" rel="noopener noreferrer">
+        <FaGithub size={22} className={iconClass} />
+      </a>
+      <a href="https://x.com/spyderfall" target="_blank" rel="noopener noreferrer">
+        <FaXTwitter size={22} className={iconClass} />
+      </a>
       <div className="w-px h-24 bg-gray-500 dark:bg-gray-600 opacity-50 mt-4"></div>
     </div>
   );
