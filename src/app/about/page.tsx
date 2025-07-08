@@ -23,7 +23,7 @@ export default function AboutPage() {
 
       {/* Intro */}
       <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-12">
-        I'm a passionate full stack developer with a knack for building scalable, clean, and efficient applications using modern technologies. I focus on crafting maintainable code and delightful user experiences.
+        I&apos;m a passionate full stack developer with a knack for building scalable, clean, and efficient applications using modern technologies. I focus on crafting maintainable code and delightful user experiences.
       </p>
 
       {/* Stats */}
