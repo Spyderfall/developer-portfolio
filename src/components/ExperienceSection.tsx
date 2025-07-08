@@ -9,7 +9,7 @@ export default function ExperienceSection() {
 
   return (
     <motion.section
-      className="max-w-6xl mx-auto px-4 py-20 text-gray-800 dark:text-gray-200"
+      className="max-w-6xl mx-auto px-4 text-gray-800 dark:text-gray-200"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -48,11 +48,10 @@ export default function ExperienceSection() {
             <motion.button
               key={idx}
               onClick={() => setActive(idx)}
-              className={`text-left transition-colors duration-300 ${
-                active === idx
+              className={`text-left transition-colors duration-300 ${active === idx
                   ? 'text-indigo-500 font-semibold'
                   : 'text-gray-500 dark:text-gray-400 hover:text-indigo-400'
-              }`}
+                }`}
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}

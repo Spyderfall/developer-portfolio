@@ -98,7 +98,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="transform translate-x-4 relative group">
+              {/* <div className="transform translate-x-4 relative group">
                 <img
                   src="/profile.jpg"
                   alt="Sagar Adulkar"
@@ -107,7 +107,7 @@ export default function Home() {
           transform transition duration-500 group-hover:scale-105
         "
                 />
-              </div>
+              </div> */}
             </div>
           </section>
 
@@ -123,7 +123,7 @@ export default function Home() {
           </section>
 
           {/* Experience */}
-          <section id="experience" className="min-h-screen px-8 py-24 bg-[#F9FAFB] dark:bg-[#121212]">
+          <section id="experience" className=" px-8 py-32 bg-[#F9FAFB] dark:bg-[#121212]">
             <ExperienceSection />
           </section>
 
@@ -143,7 +143,7 @@ export default function Home() {
           <section
             id="contact"
             className="
-    min-h-screen flex items-center justify-center 
+    py-48 flex items-center justify-center 
     px-8 
     relative overflow-hidden
     bg-gray-100 dark:bg-[#101010]

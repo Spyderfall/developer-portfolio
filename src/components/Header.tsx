@@ -182,7 +182,7 @@ export default function Header({ onClick }: HeaderProps) {
         {/* Right: Resume CTA + Theme Toggle */}
         <motion.div className="basis-1/3 flex justify-end items-center gap-4" variants={itemVariants}>
           <a
-            href="/Sagar_Adulkar_Resume.pdf"
+            href="/SagarAdulkarResume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="
