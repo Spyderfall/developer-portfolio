@@ -91,7 +91,7 @@ export default function Home() {
     transition-colors duration-300
   "
                   >
-                    Let’s Connect
+                    Let&apos;s Connect
                   </button>
                 </div>
               </div>
