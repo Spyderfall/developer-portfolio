@@ -13,7 +13,7 @@ export default function Logo({ className = '', animate = true }: LogoProps) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
       fill="none"
-      stroke="#111827"
+      stroke="#a1a1aa"
       strokeWidth="2"
       className={className}
       aria-label="Spyderfall logo"
