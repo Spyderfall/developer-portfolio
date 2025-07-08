@@ -3,11 +3,9 @@
 import { useEffect, useState } from 'react';
 import {
   FaGithub,
-  FaYoutube,
-  FaInstagram,
   FaLinkedin,
 } from 'react-icons/fa';
-import { FaEnvelope, FaXTwitter } from 'react-icons/fa6';
+import { FaXTwitter } from 'react-icons/fa6';
 
 export default function SocialSidebar() {
   const [activeSection, setActiveSection] = useState('home');

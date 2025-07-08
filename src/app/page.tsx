@@ -6,12 +6,10 @@ import Header from '@/components/Header';
 import TypingTitle from '@/components/TypingTitle';
 import AboutSection from '@/components/AboutSection';
 import ExperienceSection from '@/components/ExperienceSection';
-import ProjectsSection from '@/components/ProjectsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import SocialSidebar from '@/components/SocialSidebar';
 import HeroBackground from '@/components/HeroBackground';
-import HackerTextCycler from '@/components/HackerTextCycler';
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
@@ -63,7 +61,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row items-center gap-x-20 relative z-10">
               <div className="text-left transform -translate-x-4 max-w-xl">
                 <p className="text-lg text-gray-800 dark:text-gray-300 mb-2 tracking-wide">
-                  Hello, I’m
+                  Hello, I&apos;m
                 </p>
 
                 <TypingTitle

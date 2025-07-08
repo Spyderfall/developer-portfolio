@@ -10,7 +10,7 @@ export default function Footer() {
       {/* CTA Banner */}
       <div className="max-w-7xl mx-auto text-center mb-12 px-4">
         <h2 className="text-3xl sm:text-4xl font-bold mb-3">
-          Let's build something great together 🚀
+          Let&apos;s build something great together 🚀
         </h2>
         <p className="text-gray-400 max-w-xl mx-auto leading-relaxed">
           Got a project in mind or just want to say hi? My inbox is always open.

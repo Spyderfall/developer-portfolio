@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaEnvelope } from 'react-icons/fa';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6'; // X is only in `fa6`
 
@@ -67,7 +67,7 @@ export default function ContactSection() {
           viewport={{ once: true }}
         >
           <div className="flex-1 h-[2px] bg-indigo-500"></div>
-          <h2 className="text-4xl font-bold text-indigo-500 whitespace-nowrap">Let's Connect</h2>
+          <h2 className="text-4xl font-bold text-indigo-500 whitespace-nowrap">Let&apos;s Connect</h2>
           <div className="flex-1 h-[2px] bg-indigo-500"></div>
         </motion.div>
 

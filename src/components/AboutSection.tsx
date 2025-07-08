@@ -13,7 +13,6 @@ import {
   SiTypescript,
   SiDocker,
   SiKubernetes,
-  SiAndroid,
   SiGit,
 } from 'react-icons/si';
 
@@ -59,7 +58,7 @@ export default function AboutSection() {
             As a Full-Stack Developer, I design secure and scalable systems that create real business impact. My approach is rooted in architectural clarity, system resilience, and outcome-driven development. I combine technical excellence with a data-informed mindset to deliver solutions that are robust, adaptable, and built for continuous improvement. I am passionate about turning complex challenges into elegant, efficient solutions that drive success.
           </p>
           <p className="mt-3 text-base leading-relaxed text-gray-700 dark:text-gray-400 transition-colors duration-500">
-            When I'm not coding, I enjoy soaking in the simple moments of life.
+            When I&apos;m not coding, I enjoy soaking in the simple moments of life.
           </p>
         </div>
 

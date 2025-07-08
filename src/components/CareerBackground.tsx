@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 export default function CareerBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -64,7 +65,7 @@ export default function CareerBackground() {
             key={i}
             className="orbiting-icon absolute w-8 h-8"
           >
-            <img
+            <Image
               src={src}
               alt="Tech"
               className="w-full h-full object-contain opacity-70 dark:opacity-80"

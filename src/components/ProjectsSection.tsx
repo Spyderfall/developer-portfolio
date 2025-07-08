@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 interface ProjectsSectionProps {
   projectIndex: number;
@@ -61,7 +62,7 @@ export default function ProjectsSection({ projectIndex }: ProjectsSectionProps) 
         {/* Image Container */}
         <div className="md:w-[60%] relative flex justify-center items-center rounded-lg">
           <div className="absolute inset-0 rounded-lg bg-indigo-200 opacity-20 blur-3xl pointer-events-none"></div>
-          <img
+          <Image
             src={project.image}
             alt={project.title}
             loading="lazy"
